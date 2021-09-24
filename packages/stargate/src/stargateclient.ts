@@ -100,6 +100,7 @@ export interface BroadcastTxFailure {
 
 export interface BroadcastTxSuccess {
   readonly height: number;
+  readonly code: number;
   readonly transactionHash: string;
   readonly rawLog?: string;
   readonly data?: readonly MsgData[];
