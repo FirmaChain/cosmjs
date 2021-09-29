@@ -194,6 +194,7 @@ describe("multisignature", () => {
         const fee = {
           amount: coins(2000, "ucosm"),
           gas: gasLimit.toString(),
+          granter: "",
         };
 
         return {

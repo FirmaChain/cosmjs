@@ -211,7 +211,7 @@ describe("StargateClient", () => {
       const response1 = await client.getBalance(unused.address, simapp.denomFee);
       expect(response1).toEqual({
         amount: unused.balanceFee,
-        denom: simapp.denomFee,
+        denom: simapp.denomFee,        
       });
       const response2 = await client.getBalance(unused.address, simapp.denomStaking);
       expect(response2).toEqual({
@@ -242,7 +242,7 @@ describe("StargateClient", () => {
       const response = await client.getBalance(nonExistentAddress, simapp.denomFee);
       expect(response).toEqual({
         denom: simapp.denomFee,
-        amount: "0",
+        amount: "0",        
       });
 
       client.disconnect();
@@ -315,7 +315,8 @@ describe("StargateClient", () => {
       const { accountNumber, sequence } = (await client.getSequence(address))!;
       const feeAmount = coins(2000, "ucosm");
       const gasLimit = 200000;
-      const authInfoBytes = makeAuthInfoBytes([{ pubkey, sequence }], feeAmount, gasLimit);
+      const granter = "";
+      const authInfoBytes = makeAuthInfoBytes([{ pubkey, sequence }], feeAmount, gasLimit, granter);
 
       const chainId = await client.getChainId();
       const signDoc = makeSignDoc(txBodyBytes, authInfoBytes, chainId, accountNumber);
@@ -372,7 +373,8 @@ describe("StargateClient", () => {
       const { accountNumber, sequence } = (await client.getSequence(address))!;
       const feeAmount = coins(2000, "ucosm");
       const gasLimit = 200000;
-      const authInfoBytes = makeAuthInfoBytes([{ pubkey, sequence }], feeAmount, gasLimit, sequence);
+      const granter = "";
+      const authInfoBytes = makeAuthInfoBytes([{ pubkey, sequence }], feeAmount, gasLimit, granter);
 
       const chainId = await client.getChainId();
       const signDoc = makeSignDoc(txBodyBytes, authInfoBytes, chainId, accountNumber);
@@ -423,9 +425,10 @@ describe("StargateClient", () => {
       const chainId = await client.getChainId();
       const feeAmount = coins(2000, "ucosm");
       const gasLimit = 200000;
+      const granter = "";
 
       const { accountNumber: accountNumber1, sequence: sequence1 } = (await client.getSequence(address))!;
-      const authInfoBytes1 = makeAuthInfoBytes([{ pubkey, sequence: sequence1 }], feeAmount, gasLimit);
+      const authInfoBytes1 = makeAuthInfoBytes([{ pubkey, sequence: sequence1 }], feeAmount, gasLimit, granter);
       const signDoc1 = makeSignDoc(txBodyBytes, authInfoBytes1, chainId, accountNumber1);
       const { signature: signature1 } = await wallet.signDirect(address, signDoc1);
       const txRaw1 = TxRaw.fromPartial({
@@ -439,7 +442,7 @@ describe("StargateClient", () => {
       assertIsBroadcastTxSuccess(txResult);
 
       const { accountNumber: accountNumber2, sequence: sequence2 } = (await client.getSequence(address))!;
-      const authInfoBytes2 = makeAuthInfoBytes([{ pubkey, sequence: sequence2 }], feeAmount, gasLimit);
+      const authInfoBytes2 = makeAuthInfoBytes([{ pubkey, sequence: sequence2 }], feeAmount, gasLimit, granter);
       const signDoc2 = makeSignDoc(txBodyBytes, authInfoBytes2, chainId, accountNumber2);
       const { signature: signature2 } = await wallet.signDirect(address, signDoc2);
       const txRaw2 = TxRaw.fromPartial({

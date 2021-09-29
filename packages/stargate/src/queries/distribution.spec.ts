@@ -29,6 +29,7 @@ describe("DistributionExtension", () => {
   const defaultFee = {
     amount: coins(25000, "ucosm"),
     gas: "1500000", // 1.5 million
+    granter: "",
   };
 
   beforeAll(async () => {

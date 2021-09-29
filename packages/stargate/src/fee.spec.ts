@@ -68,6 +68,7 @@ describe("calculateFee", () => {
     expect(fee).toEqual({
       amount: [{ amount: "2000", denom: "ucosm" }],
       gas: "80000",
+      granter: "",
     });
   });
 
@@ -78,6 +79,7 @@ describe("calculateFee", () => {
     expect(fee).toEqual({
       amount: [{ amount: "2000", denom: "ucosm" }],
       gas: "80000",
+      granter: "",
     });
   });
 });

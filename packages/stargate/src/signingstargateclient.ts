@@ -357,10 +357,12 @@ export class SigningStargateClient extends StargateClient {
     const signedTxBodyBytes = this.registry.encode(signedTxBodyEncodeObject);
     const signedGasLimit = Int53.fromString(signed.fee.gas).toNumber();
     const signedSequence = Int53.fromString(signed.sequence).toNumber();
+    const signedgranter = ""; // will be deprecated.
     const signedAuthInfoBytes = makeAuthInfoBytes(
       [{ pubkey, sequence: signedSequence }],
       signed.fee.amount,
       signedGasLimit,
+      signedgranter,
       signMode,
     );
     return TxRaw.fromPartial({
