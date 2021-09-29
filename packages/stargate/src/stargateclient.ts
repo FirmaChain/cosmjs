@@ -119,12 +119,12 @@ export interface BroadcastTxSuccess {
  */
 export type BroadcastTxResponse = BroadcastTxSuccess | BroadcastTxFailure;
 
-export function isBroadcastTxFailure(result: BroadcastTxResponse): result is BroadcastTxFailure {
-  return !!(result as BroadcastTxFailure).code;
+export function isBroadcastTxFailure(result: BroadcastTxResponse): boolean {
+  return result.code != 0;
 }
 
-export function isBroadcastTxSuccess(result: BroadcastTxResponse): result is BroadcastTxSuccess {
-  return !isBroadcastTxFailure(result);
+export function isBroadcastTxSuccess(result: BroadcastTxResponse): boolean {
+  return result.code == 0;
 }
 
 /**
