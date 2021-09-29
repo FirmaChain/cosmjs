@@ -7,7 +7,7 @@ import { makeStdTx } from "./tx";
 describe("tx", () => {
   describe("makeStdTx", () => {
     it("can make an StdTx from a SignDoc and one signature", () => {
-      const fee: StdFee = { amount: coins(123, "ucosm"), gas: "22" };
+      const fee: StdFee = { amount: coins(123, "ucosm"), gas: "22",granter: "" };
       const signDoc = makeSignDoc([], fee, "chain-xy", "hello", 3, 4);
       const signature: StdSignature = {
         pub_key: {
@@ -26,7 +26,7 @@ describe("tx", () => {
     });
 
     it("can make an StdTx from a SignDoc and multiple signatures", () => {
-      const fee: StdFee = { amount: coins(123, "ucosm"), gas: "22" };
+      const fee: StdFee = { amount: coins(123, "ucosm"), gas: "22",granter: "" };
       const signDoc = makeSignDoc([], fee, "chain-xy", "hello", 3, 4);
       const signature1: StdSignature = {
         pub_key: {

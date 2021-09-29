@@ -219,6 +219,7 @@ describe("LcdClient", () => {
           const fee = {
             amount: coins(2000, "ucosm"),
             gas: "80000", // 80k
+            granter: "",
           };
           const { accountNumber, sequence } = await client.getSequence();
           const chainId = await client.getChainId();
@@ -506,6 +507,7 @@ describe("LcdClient", () => {
           },
         ],
         gas: "890000",
+        granter: "",
       };
 
       const client = LcdClient.withExtensions({ apiUrl: launchpad.endpoint }, setupAuthExtension);
@@ -567,6 +569,7 @@ describe("LcdClient", () => {
           },
         ],
         gas: "890000",
+        granter: "",
       };
 
       const client = LcdClient.withExtensions({ apiUrl: launchpad.endpoint }, setupAuthExtension);
@@ -633,6 +636,7 @@ describe("LcdClient", () => {
           },
         ],
         gas: "890000",
+        granter: "",
       };
 
       const client = LcdClient.withExtensions({ apiUrl: launchpad.endpoint }, setupAuthExtension);
@@ -695,6 +699,7 @@ describe("LcdClient", () => {
           },
         ],
         gas: "890000",
+        granter: "",
       };
 
       const client = LcdClient.withExtensions({ apiUrl: launchpad.endpoint }, setupAuthExtension);
@@ -770,6 +775,7 @@ describe("LcdClient", () => {
           },
         ],
         gas: "890000",
+        granter: "",
       };
 
       const client = LcdClient.withExtensions({ apiUrl: launchpad.endpoint }, setupAuthExtension);
@@ -840,6 +846,7 @@ describe("LcdClient", () => {
           },
         ],
         gas: "890000",
+        granter: "",
       };
 
       const client = LcdClient.withExtensions({ apiUrl: launchpad.endpoint }, setupAuthExtension);

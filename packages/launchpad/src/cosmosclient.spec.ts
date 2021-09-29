@@ -225,6 +225,7 @@ describe("CosmosClient", () => {
           },
         ],
         gas: "890000",
+        granter: "",
       };
 
       const chainId = await client.getChainId();

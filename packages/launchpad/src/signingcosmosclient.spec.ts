@@ -29,6 +29,7 @@ describe("SigningCosmosClient", () => {
             },
           ],
           gas: "80000",
+          granter: "",
         },
       });
     });
@@ -47,6 +48,7 @@ describe("SigningCosmosClient", () => {
             },
           ],
           gas: "80000",
+          granter: "",
         },
       });
     });
@@ -73,6 +75,7 @@ describe("SigningCosmosClient", () => {
             },
           ],
           gas: "160000",
+          granter: "",
         },
       });
     });
@@ -100,6 +103,7 @@ describe("SigningCosmosClient", () => {
             },
           ],
           gas: "160000",
+          granter: "",
         },
       });
     });
@@ -166,6 +170,7 @@ describe("SigningCosmosClient", () => {
       const fee = {
         amount: coins(2000, "ucosm"),
         gas: "180000", // 180k
+        granter: "",
       };
       const result = await client.signAndBroadcast([msg], fee, "Use your power wisely");
       assertIsBroadcastTxSuccess(result);
@@ -197,6 +202,7 @@ describe("SigningCosmosClient", () => {
       const fee = {
         amount: coins(2000, "ucosm"),
         gas: "180000", // 180k
+        granter: "",
       };
       const memo = "Use your power wisely";
 
@@ -247,6 +253,7 @@ describe("SigningCosmosClient", () => {
       const fee = {
         amount: coins(2000, "ucosm"),
         gas: "160000", // 2*80k
+        granter: "",
       };
       const memo = "This must be authorized by the two of us";
 

@@ -50,6 +50,7 @@ describe("CosmosClient.getTx and .searchTx", () => {
         const fee = {
           amount: coins(2000, "ucosm"),
           gas: "80000", // 80k
+          granter: "",
         };
         const { accountNumber, sequence } = await client.getSequence();
         const chainId = await client.getChainId();
