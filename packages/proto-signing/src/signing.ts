@@ -42,7 +42,7 @@ export function makeAuthInfoBytes(
     fee: {
       amount: [...feeAmount],
       gasLimit: Long.fromNumber(gasLimit),
-      granter : granter
+      granter: granter,
     },
   };
   return AuthInfo.encode(AuthInfo.fromPartial(authInfo)).finish();

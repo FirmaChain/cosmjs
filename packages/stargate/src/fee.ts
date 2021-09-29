@@ -58,5 +58,6 @@ export function calculateFee(gasLimit: number, gasPrice: GasPrice | string): Std
   return {
     amount: coins(amount, denom),
     gas: gasLimit.toString(),
+    granter: "",
   };
 }

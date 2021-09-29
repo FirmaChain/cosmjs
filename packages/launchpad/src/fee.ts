@@ -60,6 +60,7 @@ function calculateFee(gasLimit: number, { denom, amount: gasPriceAmount }: GasPr
   return {
     amount: coins(amount, denom),
     gas: gasLimit.toString(),
+    granter: "",
   };
 }
 
