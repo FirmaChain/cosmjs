@@ -9,6 +9,7 @@ const defaultChainId = "testing";
 const defaultFee: StdFee = {
   amount: [{ amount: "100", denom: "ucosm" }],
   gas: "250",
+  granter: "",
 };
 const defaultMemo = "Some memo";
 const defaultSequence = "0";

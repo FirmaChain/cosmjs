@@ -21,6 +21,7 @@ function createSignDoc(accountNumber: number, address: string): string {
     fee: {
       amount: [{ amount: "100", denom: "ucosm" }],
       gas: "250",
+      granter: "",
     },
     memo: "Some memo",
     msgs: [

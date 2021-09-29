@@ -248,7 +248,7 @@ describe("Secp256k1HdWallet", () => {
       const wallet = await Secp256k1HdWallet.fromMnemonic(defaultMnemonic);
       const signDoc: StdSignDoc = {
         msgs: [],
-        fee: { amount: [], gas: "23" },
+        fee: { amount: [], gas: "23",granter: "" },
         chain_id: "foochain",
         memo: "hello, world",
         account_number: "7",

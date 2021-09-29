@@ -35,7 +35,7 @@ describe("Secp256k1Wallet", () => {
       const signer = await Secp256k1Wallet.fromKey(defaultPrivkey);
       const signDoc: StdSignDoc = {
         msgs: [],
-        fee: { amount: [], gas: "23" },
+        fee: { amount: [], gas: "23", granter: "" },
         chain_id: "foochain",
         memo: "hello, world",
         account_number: "7",

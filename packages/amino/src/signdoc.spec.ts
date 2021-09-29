@@ -79,7 +79,8 @@ describe("encoding", () => {
       };
       const fee = {
         amount: [{ amount: "2000", denom: "ucosm" }],
-        gas: "180000", // 180k
+        gas: "180000", // 180k,
+        granter: "",
       };
       const memo = "Use your power wisely";
       const accountNumber = 15;
@@ -117,6 +118,7 @@ describe("encoding", () => {
       const fee = {
         amount: [{ amount: "2000", denom: "ucosm" }],
         gas: "180000", // 180k
+        granter: "",
       };
       const accountNumber = 15;
       const sequence = 16;
