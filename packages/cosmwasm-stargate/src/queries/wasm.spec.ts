@@ -57,6 +57,7 @@ async function uploadContract(
   const fee: StdFee = {
     amount: coins(5000000, "ucosm"),
     gas: "89000000",
+    granter: "",
   };
   const firstAddress = (await signer.getAccounts())[0].address;
   const client = await SigningStargateClient.connectWithSigner(wasmd.endpoint, signer, {
@@ -91,6 +92,7 @@ async function instantiateContract(
   const fee: StdFee = {
     amount: coins(5000000, "ucosm"),
     gas: "89000000",
+    granter: "",
   };
 
   const firstAddress = (await signer.getAccounts())[0].address;
@@ -119,6 +121,7 @@ async function executeContract(
   const fee: StdFee = {
     amount: coins(5000000, "ucosm"),
     gas: "89000000",
+    granter: "",
   };
 
   const firstAddress = (await signer.getAccounts())[0].address;

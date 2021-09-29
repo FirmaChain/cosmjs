@@ -227,6 +227,7 @@ export class ModifyingSecp256k1HdWallet extends Secp256k1HdWallet {
       fee: {
         amount: coins(3000, "ucosm"),
         gas: "333333",
+        granter: "",
       },
       memo: "This was modified",
     };
@@ -260,6 +261,7 @@ export class ModifyingDirectSecp256k1HdWallet extends DirectSecp256k1HdWallet {
     }));
     const modifiedFeeAmount = coins(3000, "ucosm");
     const modifiedGasLimit = 333333;
+    const modifiedGranter = "";
     const modifiedSignDoc = {
       ...signDoc,
       bodyBytes: Uint8Array.from(TxBody.encode(modifiedTxBody).finish()),
@@ -267,6 +269,7 @@ export class ModifyingDirectSecp256k1HdWallet extends DirectSecp256k1HdWallet {
         signers,
         modifiedFeeAmount,
         modifiedGasLimit,
+        modifiedGranter,
         SignMode.SIGN_MODE_DIRECT,
       ),
     };

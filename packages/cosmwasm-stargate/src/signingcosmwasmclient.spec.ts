@@ -441,6 +441,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ucosm"),
           gas: "180000", // 180k
+          granter: "",
         };
         const memo = "Use your power wisely";
         const result = await client.signAndBroadcast(alice.address0, [msgAny], fee, memo);
@@ -472,6 +473,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ucosm"),
           gas: "180000", // 180k
+          granter: "",
         };
         const memo = "Use your power wisely";
         const result = await client.signAndBroadcast(alice.address0, [msgAny], fee, memo);
@@ -512,6 +514,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ucosm"),
           gas: "200000",
+          granter: "",
         };
         const memo = "Use your tokens wisely";
         const result = await client.signAndBroadcast(alice.address0, [msgAny], fee, memo);
@@ -540,6 +543,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ustake"),
           gas: "200000",
+          granter: "",
         };
         const memo = "Use your tokens wisely";
         const result = await client.signAndBroadcast(alice.address0, [msgAny], fee, memo);
@@ -569,6 +573,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ustake"),
           gas: "1500000",
+          granter: "",
         };
         const memo = "Use your tokens wisely";
         const result = await client.signAndBroadcast(alice.address0, [msgAny], fee, memo);
@@ -694,6 +699,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ucosm"),
           gas: "200000",
+          granter: "",
         };
         const memo = "Use your power wisely";
         const result = await client.signAndBroadcast(alice.address0, [msgAny], fee, memo);
@@ -724,6 +730,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ucosm"),
           gas: "200000",
+          granter: "",
         };
         const memo = "Use your power wisely";
         const result = await client.signAndBroadcast(alice.address0, [msgAny], fee, memo);
@@ -766,6 +773,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ucosm"),
           gas: "180000", // 180k
+          granter: "",
         };
         const memo = "Use your power wisely";
         const signed = await client.sign(alice.address0, [msgAny], fee, memo);
@@ -799,6 +807,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ucosm"),
           gas: "180000", // 180k
+          granter: "",
         };
         const memo = "Use your power wisely";
         const signed = await client.sign(alice.address0, [msgAny], fee, memo);
@@ -839,6 +848,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ucosm"),
           gas: "200000",
+          granter: "",
         };
         const memo = "Use your tokens wisely";
         const signed = await client.sign(alice.address0, [msgAny], fee, memo);
@@ -870,6 +880,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ustake"),
           gas: "200000",
+          granter: "",
         };
         const memo = "Use your tokens wisely";
         const signed = await client.sign(alice.address0, [msgAny], fee, memo);
@@ -995,6 +1006,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ucosm"),
           gas: "200000",
+          granter: "",
         };
         const memo = "Use your power wisely";
         const signed = await client.sign(alice.address0, [msgAny], fee, memo);
@@ -1028,6 +1040,7 @@ describe("SigningCosmWasmClient", () => {
         const fee = {
           amount: coins(2000, "ucosm"),
           gas: "200000",
+          granter: "",
         };
         const memo = "Use your power wisely";
         const signed = await client.sign(alice.address0, [msgAny], fee, memo);
